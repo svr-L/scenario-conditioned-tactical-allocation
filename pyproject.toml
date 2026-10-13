@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scenario-conditioned-tactical-allocation"
+version = "0.1.0"
+description = "Scenario-conditioned tactical asset allocation around strategic anchors with CVaR optimization, decision attribution, walk-forward validation, and spanning tests"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{name = "Saverio Lauriola"}]
+dependencies = [
+  "numpy>=1.24",
+  "pandas>=2.0",
+  "scipy>=1.10",
+  "scikit-learn>=1.3",
+  "statsmodels>=0.14",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7.0"]
+research = ["matplotlib>=3.7", "jupyter>=1.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
